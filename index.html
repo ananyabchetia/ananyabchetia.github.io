@@ -1,9 +1,339 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ananya's Website</title>
+    <!-- Include Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+
+      html,body {
+      cursor: none; 
+      }
+      .custom-cursor {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; 
+      background-color: rgba(126, 232, 232, 0.5); /* Semi-transparent color for the glow */
+      box-shadow: 0 0 10px rgba(40, 241, 187, 0.5); /* Adjust glow intensity */
+      z-index: 100; /* Ensure cursor is on top */
+      }
+       .nav-links {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+      }
+      .nav-links a {
+        cursor: none; 
+        margin-left: 12px;
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-weight: bold;
+      }
+       html,body {
+        background-color: #f8f6ec;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        border-radius: 12px;
+      }
+      /* Custom style for text color */
+      .bio {
+        color: black;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 22px;
+      }
+
+      .title { 
+        color: brown;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 32px;
+        margin-top: 60px; 
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .bio-list {
+        margin-top: 15px; 
+        margin-bottom: 30px; 
+      }
+
+      .content-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px; /* Space between image and text */
+      }
+
+      .newbio {
+        color: black;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 18px;
+        width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 600px; 
+        margin-top: -260px;
+      }
+
+      .description {
+        color: brown;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 25px;
+        margin-top: 100px; 
+        margin-left: 50px;
+        font-weight: bold 
+        
+      }
+     
+      .stories {
+        color: black;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 22px;
+        margin-top: 20px; 
+        margin-left: 100px;
+      }
+      .articles {
+        color: black;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 22px;
+        margin-top: 15px; 
+        margin-bottom: 26px;
+      }
+
+      .headline {
+        color: brown;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 30px;
+        margin-top: 80px; 
+        margin-bottom: 26px;
+        margin-left: 30px;
+        font-weight: bold;
+      }
+
+      .articles-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+      .articles-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+      }
+
+        .article-card {
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+        }
+
+      .article-card:hover {
+        transform: scale(1.05);
+      }
+
+      .article-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .article-content {
+        padding: 15px;
+        font-family: "Lucida Console", "Courier New", monospace;
+      }
+
+      .article-content h3 {
+        color: brown;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .article-content p {
+        color: black;
+        font-size: 16px;
+      }
+
+      .article-content a {
+        display: inline-block;
+        margin-top: 10px;
+        color: brown;
+        text-decoration: none;
+      }
+
+      .headlinept2 {
+
+        color: brown;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 30px;
+        margin-top: 80px; 
+        margin-bottom: 26px;
+        margin-left: 60px;
+        font-weight: bold;
+
+      }
+    
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+    
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        });
+      });
+    </script>
+
   </head>
   <body>
-    <h1>Welcome to my website!</h1>
-  </body>
-</html>
+    <div class="nav-links">
+      <a href="data.html">Data</a>
+      <a href="articles.html">Articles</a>
+    </div>
+    <div class="container">
+      <h3 class="title">ananya chetia</h3>
+      <p class="bio">data journalism student at Columbia University</p>
+      <ul class="bio bio-list">
+        <li>email <a href="mailto:ananyabchetia@gmail.com">ananyabchetia@gmail.com</a></li>
+        <li>twitter <a href="https://x.com/AnanyaBChetia" target="_blank">@AnanyaBChetia</a></li>
+        <li><a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank">Linkedin</a></li>
+        <li><a href="https://github.com/ananyabchetia/ananyagithub" target="_blank">GitHub</a></li>
+      </ul>
+      </ul>
+    </div>
+
+    <style>
+
+      .image-container {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: flex-start; /* Align content to the left */
+        padding-left: 22%; /* Adjust to move it slightly to the right (closer to center) */
+        margin-top: 15px; 
+        margin-bottom: 30px; 
+      }
+    
+      .image {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+        margin-top: 15px; 
+        margin-bottom: 26px; 
+      
+      }
+      
+    </style>
+    
+    <div class="image-container">
+      <img src="ananya.jpeg" class="image" alt="Ananya's Photo">
+    </div>
+    
+    <p class="newbio">Hey! I am a data journalist who's covered gas leaks in Virginia, floods in Assam, India and investigated why wage gaps exist in college sports.
+       My work has appeared on Inside Climate News, Mongabay, Columbia Journalism Review, ABC News Live among others. 
+      </p>
+
+<!-- Add this after your existing content, just before the closing </body> tag -->
+<section class="articles-section">
+  <h2 class="headline">Check out my articles</h2>
+  <div class="articles-container">
+    <div class="article-card">
+      <img src="flood.jpeg" alt="Article about Assam Floods">
+      <div class="article-content">
+        <h3>When Books Sink Underwater in Assam</h3>
+        <p>An in-depth investigation into the impact of flooding on education in Assam, highlighting the challenges faced by students and communities.</p>
+        <a href="https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/" target="_blank">Read More</a>
+      </div>
+    </div> 
+    <div class="article-card">
+      <img src="methane.jpeg" alt="Article about Methane Leaks">
+      <div class="article-content">
+        <h3>Methane Activists in Richmond Detect Potentially Dangerous Gas Leaks</h3>
+        <p>Beyond Methane RVA obtained documents from the Richmond Gas Works that revealed hundreds of leaks and significant costs to city ratepayers—and the climate.</p>
+        <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/#:~:text=RICHMOND%2C%20Va.,a%20blaze%20on%20the%20street." target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="dominion.jpeg" alt="Photo of acitvists">
+      <div class="article-content">
+        <h3>Dominion Energy's Peaker Plant sparks concern with climate activists in Richmond</h3>
+        <p></p>
+        <a href="https://www.thecollegianur.com/article/2023/12/dominion-energys-peaker-plant-sparks-concern-with-climate-activists-in-richmond" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="afterschool.jpeg" alt="after school">
+      <div class="article-content">
+        <h3>Nonprofit Loses Funds for After-School Programs At Harlem Schools</h3>
+        <p>
+          Parents fear they'll have to work fewer hours if their children can't attend free after-school programs..</p>
+        <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="sports.jpeg" alt="sports school">
+      <div class="article-content">
+        <h3>The business of college sports and gender-based wage gaps for head coaches</h3>
+        <p>Coaches for men's athletic teams at the University of Richmond on average earned $79,320 more than coaches for women's teams in 2021, according to federal data.
+        </p>
+        <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="rggi.jpeg" alt="rggi">
+      <div class="article-content">
+        <h3>Richmond citizens confront Youngkin's order to repeal RGGI</h3>
+        <p>Roughly 30 climate activists stood united in a straight line outside of Richmond’s Capitol Square as Lee Williams, a retired nurse, skipped on the side of the road, leading the crowd with chants.</p>
+        
+        <a href="https://www.thecollegianur.com/article/2023/09/richmond-citizens-confront-youngkins-order-to-repeal-rggi" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="junior.jpeg" alt="junior">
+      <div class="article-content">
+        <h3>'Those are my people:' Turkish junior flies home to help earthquake survivors</h3>
+        <p>“I felt the uselessness of being here [on campus],” she said. “I just felt like people needed help. My family's not okay. I was literally panicking all over.”</p>
+        <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors?ct=content_open&cv=cbox_featured" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="richmond.jpeg" alt="richmond">
+      <div class="article-content">
+        <h3>South Richmond Residents Oppose Fire Training Facility</h3>
+        <p>The proposed facility is set for construction despite its environmental impact on vulnerable residents and a wildlife sanctuary just 100 meters away.</p>
+        <a href="https://insideclimatenews.org/news/13072023/richmond-fire-training-facility-sanctuary/" target="_blank">Read More</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="vandalism1.jpeg" alt="mosque">
+      <div class="article-content">
+        <h3>Muslim students grapple with vandalism on Richmond mosque</h3>
+        <p>The West End Islamic Center was vandalized for the second time within six months between the hours of 3:30 p.m. to 4:30 p.m.</p>
+        <a href="https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas" target="_blank">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+</section>
+<section class="data-section"></section>
+  <h2 class="headlinept2">Check out my data projects</h2>
+
+  <iframe 
+  src="https://raw.githubusercontent.com/ananyabchetia/portfolio/main/universityscraping.html" 
+  width="100%" 
+  height="800px" 
+  frameborder="0">
+</iframe>
