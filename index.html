@@ -233,6 +233,30 @@
         margin-bottom: 26px; 
       
       }
+
+      .data {
+        color: black;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 18px;
+        width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 900px; 
+        margin-top: -400px;
+      }
+
+      .data1 {
+        color: brown;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size: 15px;
+        width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 900px; 
+        margin-bottom:14px;
+      }
+     
+
       
     </style>
     
@@ -329,11 +353,60 @@
   </div>
 </section>
 <section class="data-section"></section>
-  <h2 class="headlinept2">Check out my data projects</h2>
 
+  <h2 class="headlinept2">Check out my data projects</h2>
 <iframe 
   src="universityscraping.html" 
-  width="70%" 
-  height="500px" 
+  width="60%" 
+  height="400px" 
   style="border: none;">
 </iframe>
+
+<p class="data">Scroll, zoom and click through the U.S map to see which U.S universities provided financial aid packages to international students in 2023.</p>
+<p class="data1">Project done with over dozens of pdf and website scrapping. 
+  Map made with geopandas in jupyter notebook. </p>
+
+<head>
+    <style>
+      
+      .project-link {
+          max-width: 400px;
+          margin-left: 1cm; /* Moves the entire link container 1cm from the left */
+          display: inline-block; /* Allows precise positioning */
+          margin-top:150px;
+        }
+
+          .project-link img {
+            width: 500%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top:150px;
+          }
+        .project-link:hover {
+            transform: scale(1.05);
+            margin-top: 150px;
+          }
+          .project-description {
+            text-align: center;
+            color: #333;
+            font-size: 18px;
+            margin-left: 400px;
+            font-family: "Lucida Console", "Courier New", "monospace";
+            margin-top: -220px; /* Negative margin moves it up */
+            margin-left: 400px; 
+          }
+
+    </style>
+</head>
+<body>
+    <a href="https://flask-project-spotipy.onrender.com/" 
+       target="_blank" 
+       class="project-link">
+        <img src="spotify.jpeg" alt="Spotipy Project Screenshot">
+    </a>
+    <p class="project-description">
+        A Flask-based web application that leverages the Spotify API to provide music insights and playlist management tools.
+    </p>
+</body>
+</html>
+
