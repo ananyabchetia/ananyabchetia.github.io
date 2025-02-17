@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ananya's Website</title>
-    <!-- Include Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
-      /* Remove default cursor */
       html, body {
         cursor: none;
         background-color: #f8f6ec;
         min-height: 100%;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
       }
 
       .custom-cursor {
-        position: absolute;
+        position: fixed;
         width: 40px;
         height: 40px;
         border-radius: 50%;
         background-color: rgba(126, 232, 232, 0.5);
         box-shadow: 0 0 10px rgba(40, 241, 187, 0.5);
-        z-index: 100;
+        z-index: 1000;
         pointer-events: none;
+        transform: translate(-50%, -50%);
       }
 
       .nav-links {
@@ -64,19 +64,12 @@
         }
       }
 
-      /* Bio and Text Styling */
       .bio {
         color: black;
         font-family: "Lucida Console", "Courier New", monospace;
         font-size: 22px;
       }
 
-      .bio-list {
-        margin-top: 15px;
-        margin-bottom: 30px;
-      }
-
-      /* Article Styling */
       .articles-section {
         max-width: 1200px;
         margin: 0 auto;
@@ -118,18 +111,10 @@
         font-weight: bold;
       }
 
-      .article-content p {
-        color: black;
-        font-size: 16px;
-      }
-
       .article-content a {
-        display: inline-block;
-        margin-top: 10px;
         color: brown;
         text-decoration: none;
       }
-
     </style>
 
     <script>
@@ -148,9 +133,7 @@
   
   <body>
     <div class="container">
-      <h3 class="title">
-        ananya chetia<span class="blinking-cursor">|</span>
-      </h3>
+      <h3 class="title">ananya chetia<span class="blinking-cursor">|</span></h3>
       <p class="bio">data journalism student at Columbia University</p>
       <ul class="bio bio-list">
         <li>Email: <a href="mailto:ananyabchetia@gmail.com">ananyabchetia@gmail.com</a></li>
@@ -159,184 +142,141 @@
         <li><a href="https://github.com/ananyabchetia/ananyagithub" target="_blank">GitHub</a></li>
       </ul>
     </div>
+
+    <section class="articles-section">
+      <p class="bio">Check out my articles below!</p>
+      <div class="articles-container">
+        <div class="article-card">
+          <img src="flood.jpeg" alt="Article about Assam Floods">
+          <div class="article-content">
+            <h3>When Books Sink Underwater in Assam</h3>
+            <p>An in-depth investigation into the impact of flooding on education in Assam.</p>
+            <a href="https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/" target="_blank">Read More</a>
+          </div>
+        </div> 
+        <div class="article-card">
+          <img src="methane.jpeg" alt="Article about Methane Leaks">
+          <div class="article-content">
+            <h3>Methane Activists in Richmond Detect Potentially Dangerous Gas Leaks</h3>
+            <p>Beyond Methane RVA obtained documents from the Richmond Gas Works that revealed hundreds of leaks and significant costs to city ratepayers—and the climate.</p>
+            <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/#:~:text=RICHMOND%2C%20Va.,a%20blaze%20on%20the%20street." target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="dominion.jpeg" alt="Photo of acitvists">
+          <div class="article-content">
+            <h3>Dominion Energy's Peaker Plant sparks concern with climate activists in Richmond</h3>
+            <p></p>
+            <a href="https://www.thecollegianur.com/article/2023/12/dominion-energys-peaker-plant-sparks-concern-with-climate-activists-in-richmond" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="afterschool.jpeg" alt="after school">
+          <div class="article-content">
+            <h3>Nonprofit Loses Funds for After-School Programs At Harlem Schools</h3>
+            <p>
+              Parents fear they'll have to work fewer hours if their children can't attend free after-school programs..</p>
+            <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="sports.jpeg" alt="sports school">
+          <div class="article-content">
+            <h3>The business of college sports and gender-based wage gaps for head coaches</h3>
+            <p>Coaches for men's athletic teams at the University of Richmond on average earned $79,320 more than coaches for women's teams in 2021, according to federal data.
+            </p>
+            <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="rggi.jpeg" alt="rggi">
+          <div class="article-content">
+            <h3>Richmond citizens confront Youngkin's order to repeal RGGI</h3>
+            <p>Roughly 30 climate activists stood united in a straight line outside of Richmond’s Capitol Square as Lee Williams, a retired nurse, skipped on the side of the road, leading the crowd with chants.</p>
+            
+            <a href="https://www.thecollegianur.com/article/2023/09/richmond-citizens-confront-youngkins-order-to-repeal-rggi" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="junior.jpeg" alt="junior">
+          <div class="article-content">
+            <h3>'Those are my people:' Turkish junior flies home to help earthquake survivors</h3>
+            <p>“I felt the uselessness of being here [on campus],” she said. “I just felt like people needed help. My family's not okay. I was literally panicking all over.”</p>
+            <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors?ct=content_open&cv=cbox_featured" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="richmond.jpeg" alt="richmond">
+          <div class="article-content">
+            <h3>South Richmond Residents Oppose Fire Training Facility</h3>
+            <p>The proposed facility is set for construction despite its environmental impact on vulnerable residents and a wildlife sanctuary just 100 meters away.</p>
+            <a href="https://insideclimatenews.org/news/13072023/richmond-fire-training-facility-sanctuary/" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="vandalism.jpeg" alt="mosque">
+          <div class="article-content">
+            <h3>Muslim students grapple with vandalism on Richmond mosque</h3>
+            <p>The West End Islamic Center was vandalized for the second time within six months between the hours of 3:30 p.m. to 4:30 p.m.</p>
+            <a href="https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas" target="_blank">Read More</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="gentoopenguinphoto.jpg" alt="penguincoverphoto">
+          <div class="article-content">
+            <h3>This penguin equation doesn't add up</h3>
+            <p>My first data studio story about how gentoo penguins are having successful breeding and population rates despite data showing their homes warming up</p>
+            <a href="https://ananyabchetia.github.io/penguins/" target="_blank">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+        </div>
+      </div>
+    </section>
+    <section class="data-section"></section>
+    
+      <h2 class="headlinept2">Check out my data projects</h2>
+  
+    
+    <head>
+        <style>
+          
+          .project-link {
+              max-width: 400px;
+              margin-left: 1cm; /* Moves the entire link container 1cm from the left */
+              display: inline-block; /* Allows precise positioning */
+              margin-top:150px;
+            }
+    
+              .project-link img {
+                width: 500%;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                margin-top:150px;
+              }
+            .project-link:hover {
+                transform: scale(1.05);
+                margin-top: 150px;
+              }
+              .project-description {
+                text-align: center;
+                color: #333;
+                font-size: 18px;
+                margin-left: 400px;
+                font-family: "Lucida Console", "Courier New", "monospace";
+                margin-top: -220px; /* Negative margin moves it up */
+                margin-left: 450px; 
+              }
+    
+        </style>
+    </head>
+    
+    </html>
+    
+    
+    
+      </div>
+    </section>
   </body>
 </html>
-
-
-    <style>
-
-      .data {
-        color: black;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 18px;
-        width: 500px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-left: 900px; 
-        margin-top: -400px;
-      }
-
-      .data1 {
-        color: brown;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 15px;
-        width: 500px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-left: 900px; 
-        margin-bottom:14px;
-      }
-     
-      
-    </style>
-    
-
-<section class="articles-section">
-  <h2 class="headline">Check out my articles</h2>
-  <div class="articles-container">
-    <div class="article-card">
-      <img src="flood.jpeg" alt="Article about Assam Floods">
-      <div class="article-content">
-        <h3>When Books Sink Underwater in Assam</h3>
-        <p>An in-depth investigation into the impact of flooding on education in Assam, highlighting the challenges faced by students and communities.</p>
-        <a href="https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/" target="_blank">Read More</a>
-      </div>
-    </div> 
-    <div class="article-card">
-      <img src="methane.jpeg" alt="Article about Methane Leaks">
-      <div class="article-content">
-        <h3>Methane Activists in Richmond Detect Potentially Dangerous Gas Leaks</h3>
-        <p>Beyond Methane RVA obtained documents from the Richmond Gas Works that revealed hundreds of leaks and significant costs to city ratepayers—and the climate.</p>
-        <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/#:~:text=RICHMOND%2C%20Va.,a%20blaze%20on%20the%20street." target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="dominion.jpeg" alt="Photo of acitvists">
-      <div class="article-content">
-        <h3>Dominion Energy's Peaker Plant sparks concern with climate activists in Richmond</h3>
-        <p></p>
-        <a href="https://www.thecollegianur.com/article/2023/12/dominion-energys-peaker-plant-sparks-concern-with-climate-activists-in-richmond" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="afterschool.jpeg" alt="after school">
-      <div class="article-content">
-        <h3>Nonprofit Loses Funds for After-School Programs At Harlem Schools</h3>
-        <p>
-          Parents fear they'll have to work fewer hours if their children can't attend free after-school programs..</p>
-        <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="sports.jpeg" alt="sports school">
-      <div class="article-content">
-        <h3>The business of college sports and gender-based wage gaps for head coaches</h3>
-        <p>Coaches for men's athletic teams at the University of Richmond on average earned $79,320 more than coaches for women's teams in 2021, according to federal data.
-        </p>
-        <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="rggi.jpeg" alt="rggi">
-      <div class="article-content">
-        <h3>Richmond citizens confront Youngkin's order to repeal RGGI</h3>
-        <p>Roughly 30 climate activists stood united in a straight line outside of Richmond’s Capitol Square as Lee Williams, a retired nurse, skipped on the side of the road, leading the crowd with chants.</p>
-        
-        <a href="https://www.thecollegianur.com/article/2023/09/richmond-citizens-confront-youngkins-order-to-repeal-rggi" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="junior.jpeg" alt="junior">
-      <div class="article-content">
-        <h3>'Those are my people:' Turkish junior flies home to help earthquake survivors</h3>
-        <p>“I felt the uselessness of being here [on campus],” she said. “I just felt like people needed help. My family's not okay. I was literally panicking all over.”</p>
-        <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors?ct=content_open&cv=cbox_featured" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="richmond.jpeg" alt="richmond">
-      <div class="article-content">
-        <h3>South Richmond Residents Oppose Fire Training Facility</h3>
-        <p>The proposed facility is set for construction despite its environmental impact on vulnerable residents and a wildlife sanctuary just 100 meters away.</p>
-        <a href="https://insideclimatenews.org/news/13072023/richmond-fire-training-facility-sanctuary/" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="vandalism.jpeg" alt="mosque">
-      <div class="article-content">
-        <h3>Muslim students grapple with vandalism on Richmond mosque</h3>
-        <p>The West End Islamic Center was vandalized for the second time within six months between the hours of 3:30 p.m. to 4:30 p.m.</p>
-        <a href="https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas" target="_blank">Read More</a>
-      </div>
-    </div>
-    <div class="article-card">
-      <img src="gentoopenguinphoto.jpg" alt="penguincoverphoto">
-      <div class="article-content">
-        <h3>This penguin equation doesn't add up</h3>
-        <p>My first data studio story about how gentoo penguins are having successful breeding and population rates despite data showing their homes warming up</p>
-        <a href="https://ananyabchetia.github.io/penguins/" target="_blank">Read More</a>
-      </div>
-    </div>
-  </div>
-</section>
-    </div>
-  </div>
-</section>
-<section class="data-section"></section>
-
-  <h2 class="headlinept2">Check out my data projects</h2>
-<iframe 
-  src="universityscraping.html" 
-  width="60%" 
-  height="400px" 
-  style="border: none;">
-</iframe>
-
-<p class="data">Scroll, zoom and click through the U.S map to see which U.S universities provided financial aid packages to international students in 2023.</p>
-<p class="data1">Project done with over dozens of pdf and website scrapping. 
-  Map made with geopandas in jupyter notebook. </p>
-
-<head>
-    <style>
-      
-      .project-link {
-          max-width: 400px;
-          margin-left: 1cm; /* Moves the entire link container 1cm from the left */
-          display: inline-block; /* Allows precise positioning */
-          margin-top:150px;
-        }
-
-          .project-link img {
-            width: 500%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-top:150px;
-          }
-        .project-link:hover {
-            transform: scale(1.05);
-            margin-top: 150px;
-          }
-          .project-description {
-            text-align: center;
-            color: #333;
-            font-size: 18px;
-            margin-left: 400px;
-            font-family: "Lucida Console", "Courier New", "monospace";
-            margin-top: -220px; /* Negative margin moves it up */
-            margin-left: 450px; 
-          }
-
-    </style>
-</head>
-<body>
-    <a href="https://flask-project-spotipy.onrender.com/" 
-       target="_blank" 
-       class="project-link">
-        <img src="spotify.jpeg" alt="Spotipy Project Screenshot">
-    </a>
-    <p class="project-description">
-        A Flask-based web application that uses's Spotipy's API to look into an artist's album and track history.
-    </p>
-</body>
-</html>
-
