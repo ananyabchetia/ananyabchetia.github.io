@@ -3,70 +3,70 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ananya's Website</title>
+    <title>Ananya's Projects</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     
-
     <link rel="icon" type="image/png" href="monitor.png">
+
+    <!-- Importing Space Grotesk Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
       html, body {
-        cursor: none;
         background-color: #FFFCF5;
-        min-height: 100%;
+        font-family: "Space Grotesk", sans-serif;
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        cursor: none; /* Hide default cursor */
       }
 
+      /* Custom Glowing Cursor */
       .custom-cursor {
         position: fixed;
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 191, 255, 0.8);
         border-radius: 50%;
-        background-color: rgba(126, 232, 232, 0.5);
-        box-shadow: 0 0 15px rgba(40, 241, 187, 0.8);
-        z-index: 1000;
+        box-shadow: 0 0 15px rgba(0, 191, 255, 1), 0 0 30px rgba(0, 191, 255, 0.8);
         pointer-events: none;
         transform: translate(-50%, -50%);
-        transition: width 0.2s, height 0.2s, background-color 0.2s, box-shadow 0.2s;
+        transition: transform 0.05s ease-out, width 0.2s, height 0.2s, box-shadow 0.2s;
+        z-index: 9999;
       }
 
-      .custom-cursor.active {
+      .custom-cursor.grow {
         width: 35px;
         height: 35px;
-        background-color: rgba(40, 187, 241, 0.7);
-        box-shadow: 0 0 20px rgba(40, 187, 241, 0.9);
+        box-shadow: 0 0 20px rgba(0, 191, 255, 1), 0 0 40px rgba(0, 191, 255, 0.8);
       }
 
-      .nav-links {
-        position: absolute;
-        top: 20px;
-        right: 50px;
+      .custom-cursor.click {
+        width: 15px;
+        height: 15px;
+        box-shadow: 0 0 25px rgba(0, 191, 255, 1), 0 0 50px rgba(0, 191, 255, 0.8);
+        opacity: 0.8;
       }
-      .nav-links a {
-        cursor: none;
-        margin-left: 12px;
-        color: black;
-        text-decoration: none;
-        font-size: 17px;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-weight: bold;
+
+      .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh; /* Centers title & icons */
       }
 
       .title {
         color: brown;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 32px;
-        margin-top: 60px;
-        display: inline-block;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
       }
 
       .blinking-cursor {
-        font-size: 32px;
+        font-size: 30px;
         font-weight: bold;
         color: brown;
-        margin-left: 0.5px;
         animation: blink 0.6s infinite;
       }
 
@@ -78,281 +78,277 @@
 
       .bio {
         color: black;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 22px;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 25px;
       }
 
-      .articles-section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+      /* Social Icons */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
       }
 
-      .articles-container {
+      .social-icons a {
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.1);
+      }
+
+      .social-icons img {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Projects Section */
+      .projects-container {
+        max-width: 1200px; /* Increased width to accommodate 3 columns */
+        margin: 50px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .projects-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr; /* Changed to 3 columns */
+        gap: 25px; /* Slightly reduced gap for 3 columns */
       }
 
-      .article-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
+      /* Media queries for responsive design */
+      @media (max-width: 1024px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr; /* Switch to two columns on tablets */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr; /* Switch to one column on mobile */
+        }
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        position: relative;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
       }
 
-      .article-card:hover {
-        transform: scale(1.05);
+      .project-card:hover {
+        transform: scale(1.02);
       }
 
-      .article-card img {
+      .project-card img {
         width: 100%;
-        height: 250px;
+        height: 180px; /* Slightly reduced height for 3 column layout */
         object-fit: cover;
       }
 
-      .article-content {
-        padding: 15px;
-        font-family: "Lucida Console", "Courier New", monospace;
+      .project-content {
+        padding: 20px;
       }
 
-      .article-content h3 {
+      .project-content h3 {
         color: brown;
+        font-size: 18px;
         margin-bottom: 10px;
+      }
+
+      .project-content p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .project-content a {
+        color: brown;
+        font-size: 14px;
+        text-decoration: none;
         font-weight: bold;
       }
 
-      .article-content a {
-        color: brown;
-        text-decoration: none;
-      }
-      
-      .clickable-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        cursor: none;
-      }
-
-      .headlinept2 {
-        color: brown;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 22px;
-        margin-left: 20px;
-      }
-      
-      .project-link {
-        max-width: 400px;
-        margin-left: 1cm;
-        display: inline-block;
-        margin-top: 150px;
-      }
-      
-      .project-link img {
-        width: 500%;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        margin-top: 150px;
-      }
-      
-      .project-link:hover {
-        transform: scale(1.05);
-        margin-top: 150px;
-      }
-      
-      .project-description {
-        text-align: center;
-        color: #333;
-        font-size: 18px;
-        margin-left: 400px;
-        font-family: "Lucida Console", "Courier New", "monospace";
-        margin-top: -220px;
-        margin-left: 450px; 
+      .project-content a:hover {
+        text-decoration: underline;
       }
     </style>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Create custom cursor
-        const cursor = document.createElement('div');
-        cursor.classList.add('custom-cursor');
-        document.body.appendChild(cursor);
-
-        // Update cursor position
-        document.addEventListener('mousemove', (e) => {
-          cursor.style.left = e.clientX + 'px';
-          cursor.style.top = e.clientY + 'px';
-        });
-
-        // Add click effect
-        document.addEventListener('mousedown', () => {
-          cursor.classList.add('active');
-        });
-
-        document.addEventListener('mouseup', () => {
-          cursor.classList.remove('active');
-        });
-
-        // Make article cards clickable
-        const articleCards = document.querySelectorAll('.article-card');
-        articleCards.forEach(card => {
-          const link = card.querySelector('a').getAttribute('href');
-          const overlay = document.createElement('div');
-          overlay.classList.add('clickable-overlay');
-          overlay.addEventListener('click', () => {
-            window.open(link, '_blank');
-          });
-          card.appendChild(overlay);
-
-          // Hover effect for cursor
-          overlay.addEventListener('mouseenter', () => {
-            cursor.style.width = '45px';
-            cursor.style.height = '45px';
-            cursor.style.backgroundColor = 'rgba(40, 187, 241, 0.7)';
-          });
-
-          overlay.addEventListener('mouseleave', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.backgroundColor = 'rgba(126, 232, 232, 0.5)';
-          });
-        });
-
-        const allLinks = document.querySelectorAll('a');
-        allLinks.forEach(link => {
-          link.addEventListener('mouseenter', () => {
-            cursor.style.width = '45px';
-            cursor.style.height = '45px';
-            cursor.style.backgroundColor = 'rgba(40, 187, 241, 0.7)';
-          });
-
-          link.addEventListener('mouseleave', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.backgroundColor = 'rgba(126, 232, 232, 0.5)';
-          });
-        });
-      });
-    </script>
   </head>
   
   <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Title & Socials -->
     <div class="container">
-      <h3 class="title">~ ananya chetia ~ আনন্যা<span class="blinking-cursor">|</span></h3>
-      
-      <p class="bio">data journalism student at Columbia University</p>
-      <ul class="bio bio-list">
-        <li>Email: <a href="mailto:ananyabchetia@gmail.com">ananyabchetia@gmail.com</a></li>
-        <li>Twitter: <a href="https://x.com/AnanyaBChetia" target="_blank">@AnanyaBChetia</a></li>
-        <li><a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/ananyabchetia/ananyagithub" target="_blank">GitHub</a></li>
-      </ul>
+      <h1 class="title">~ ananya chetia ~ আনন্যা <span class="blinking-cursor">|</span></h1>
+      <p class="bio">data journalism reporting on inequity at Columbia University</p>
+
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="mailto:ananyabchetia@gmail.com" target="_blank">
+          <img src="email.png" alt="Email">
+        </a>
+        <a href="https://x.com/AnanyaBChetia" target="_blank">
+          <img src="twitter.png" alt="Twitter">
+        </a>
+        <a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank">
+          <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/ananyabchetia/ananyagithub" target="_blank">
+          <img src="github.png" alt="GitHub">
+        </a>
+      </div>
     </div>
 
-    <section class="articles-section">
-      <p class="bio">Check out my articles below!</p>
-      <div class="articles-container">
-        <div class="article-card">
+    <!-- Data Projects Section -->
+    <section class="projects-container">
+      <p class="bio" style="font-size: 20px; margin-bottom: 30px;">
+        find my data projects here:
+      </p>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="measurement.jpg" alt="pricetags">
+          <div class="project-content">
+            <h3>What's OFF about vanity sizing</h3>
+            <p>Exploring size variations among popular U.S brands.</p>
+            <a href="https://ananyabchetia.github.io/vanitysizing/" target="_blank">Read More</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="gentoopenguinphoto.jpg" alt="penguincoverphoto">
+          <div class="project-content">
+            <h3>This penguin equation doesn't add up</h3>
+            <p>How gentoo penguins are thriving despite climate change.</p>
+            <a href="https://ananyabchetia.github.io/penguins/" target="_blank">Read More</a>
+          </div>
+        </div>
+        
+        <!-- You might want to add a third data project here -->
+        <div class="project-card" style="visibility: hidden;">
+          <!-- This is a placeholder for the third column -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Climate Change Section -->
+    <section class="projects-container">
+      <p class="bio" style="font-size: 20px; margin-bottom: 30px;">
+        find my stories on higher education and climate change here:
+      </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
           <img src="flood.jpeg" alt="Article about Assam Floods">
-          <div class="article-content">
+          <div class="project-content">
             <h3>When Books Sink Underwater in Assam</h3>
             <p>An in-depth investigation into the impact of flooding on education in Assam.</p>
             <a href="https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/" target="_blank">Read More</a>
           </div>
         </div> 
-        <div class="article-card">
+
+        <div class="project-card">
           <img src="methane.jpeg" alt="Article about Methane Leaks">
-          <div class="article-content">
+          <div class="project-content">
             <h3>Methane Activists in Richmond Detect Potentially Dangerous Gas Leaks</h3>
-            <p>Beyond Methane RVA obtained documents from the Richmond Gas Works that revealed hundreds of leaks and significant costs to city ratepayers—and the climate.</p>
-            <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/#:~:text=RICHMOND%2C%20Va.,a%20blaze%20on%20the%20street." target="_blank">Read More</a>
+            <p>Beyond Methane RVA obtained documents revealing hundreds of leaks.</p>
+            <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/" target="_blank">Read More</a>
           </div>
         </div>
-        <div class="article-card">
-          <img src="dominion.jpeg" alt="Photo of acitvists">
-          <div class="article-content">
-            <h3>Dominion Energy's Peaker Plant sparks concern with climate activists in Richmond</h3>
-            <p></p>
-            <a href="https://www.thecollegianur.com/article/2023/12/dominion-energys-peaker-plant-sparks-concern-with-climate-activists-in-richmond" target="_blank">Read More</a>
-          </div>
-        </div>
-        <div class="article-card">
+
+        <div class="project-card">
           <img src="afterschool.jpeg" alt="after school">
-          <div class="article-content">
+          <div class="project-content">
             <h3>Nonprofit Loses Funds for After-School Programs At Harlem Schools</h3>
-            <p>
-              Parents fear they'll have to work fewer hours if their children can't attend free after-school programs..</p>
+            <p>Parents fear they'll have to work fewer hours.</p>
             <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/" target="_blank">Read More</a>
           </div>
         </div>
-        <div class="article-card">
+
+        <div class="project-card">
           <img src="sports.jpeg" alt="sports school">
-          <div class="article-content">
-            <h3>The business of college sports and gender-based wage gaps for head coaches</h3>
-            <p>Coaches for men's athletic teams at the University of Richmond on average earned $79,320 more than coaches for women's teams in 2021, according to federal data.
-            </p>
+          <div class="project-content">
+            <h3>The business of college sports and gender-based wage gaps</h3>
+            <p>Coaches for men's teams earn significantly more.</p>
             <a href="https://www.thecollegianur.com/article/2023/12/the-business-of-college-sports-and-gender-based-wage-gaps-for-head-coaches" target="_blank">Read More</a>
           </div>
         </div>
-        <div class="article-card">
+
+        <div class="project-card">
           <img src="rggi.jpeg" alt="rggi">
-          <div class="article-content">
+          <div class="project-content">
             <h3>Richmond citizens confront Youngkin's order to repeal RGGI</h3>
-            <p>Roughly 30 climate activists stood united in a straight line outside of Richmond's Capitol Square as Lee Williams, a retired nurse, skipped on the side of the road, leading the crowd with chants.</p>
-            
             <a href="https://www.thecollegianur.com/article/2023/09/richmond-citizens-confront-youngkins-order-to-repeal-rggi" target="_blank">Read More</a>
           </div>
         </div>
-        <div class="article-card">
+
+        <div class="project-card">
           <img src="junior.jpeg" alt="junior">
-          <div class="article-content">
+          <div class="project-content">
             <h3>'Those are my people:' Turkish junior flies home to help earthquake survivors</h3>
-            <p>"I felt the uselessness of being here [on campus]," she said. "I just felt like people needed help. My family's not okay. I was literally panicking all over."</p>
-            <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors?ct=content_open&cv=cbox_featured" target="_blank">Read More</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <img src="richmond.jpeg" alt="richmond">
-          <div class="article-content">
-            <h3>South Richmond Residents Oppose Fire Training Facility</h3>
-            <p>The proposed facility is set for construction despite its environmental impact on vulnerable residents and a wildlife sanctuary just 100 meters away.</p>
-            <a href="https://insideclimatenews.org/news/13072023/richmond-fire-training-facility-sanctuary/" target="_blank">Read More</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <img src="vandalism.jpeg" alt="mosque">
-          <div class="article-content">
-            <h3>Muslim students grapple with vandalism on Richmond mosque</h3>
-            <p>The West End Islamic Center was vandalized for the second time within six months between the hours of 3:30 p.m. to 4:30 p.m.</p>
-            <a href="https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas" target="_blank">Read More</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <img src="gentoopenguinphoto.jpg" alt="penguincoverphoto">
-          <div class="article-content">
-            <h3>This penguin equation doesn't add up</h3>
-            <p>My first data studio story about how gentoo penguins are having successful breeding and population rates despite data showing their homes warming up</p>
-            <a href="https://ananyabchetia.github.io/penguins/" target="_blank">Read More</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <img src="title.jpg" alt="pricetags">
-          <div class="article-content">
-            <h3>What's OFF about vanity sizing</h3>
-            <p>Using ggplot2, pandas, regex and more, I look into size variations among popular U.S brands and how this can impact body image.</p>
-            <a href="https://ananyabchetia.github.io/vanitysizing/" target="_blank">Read More</a>
+            <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors" target="_blank">Read More</a>
           </div>
         </div>
       </div>
     </section>
-    
-    <section class="data-section">
-      <h2 class="headlinept2"></h2>
-    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cursor = document.querySelector(".custom-cursor");
+        
+        // Basic cursor movement
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        });
+        
+        // Handle hover effects
+        const interactiveElements = document.querySelectorAll("a, .project-card");
+        interactiveElements.forEach((elem) => {
+          elem.addEventListener("mouseenter", () => {
+            cursor.classList.add("grow");
+          });
+          elem.addEventListener("mouseleave", () => {
+            cursor.classList.remove("grow");
+          });
+        });
+        
+        // Handle click effects
+        document.addEventListener("mousedown", () => {
+          cursor.classList.add("click");
+        });
+        
+        document.addEventListener("mouseup", () => {
+          cursor.classList.remove("click");
+        });
+        
+        // Make cursor work when clicking on project cards
+        document.querySelectorAll(".project-card").forEach(card => {
+          // Skip hidden placeholder cards
+          if (card.style.visibility === "hidden") return;
+          
+          card.addEventListener("click", (e) => {
+            // Find the link within the card
+            const link = card.querySelector("a");
+            if (link) {
+              // If user clicked directly on the link, let the default behavior handle it
+              if (e.target === link || link.contains(e.target)) {
+                return;
+              }
+              // Otherwise open the link
+              window.open(link.href, "_blank");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
