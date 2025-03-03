@@ -201,7 +201,7 @@
         <a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank">
           <img src="linkedin.png" alt="LinkedIn">
         </a>
-        <a href="https://github.com/ananyabchetia/ananyagithub" target="_blank">
+        <a href="https://github.com/ananyabchetia" target="_blank">
           <img src="github.png" alt="GitHub">
         </a>
       </div>
@@ -316,9 +316,8 @@
           </div>
         </div>
     
-        <!-- If you need a placeholder for the ninth card to complete the grid -->
+   
         <div class="project-card" style="visibility: hidden;">
-          <!-- This is a placeholder for the ninth card -->
         </div>
       </div>
     </section>
@@ -327,13 +326,13 @@
       document.addEventListener("DOMContentLoaded", function () {
         const cursor = document.querySelector(".custom-cursor");
         
-        // Basic cursor movement
+  
         document.addEventListener("mousemove", (e) => {
           cursor.style.left = `${e.clientX}px`;
           cursor.style.top = `${e.clientY}px`;
         });
         
-        // Handle hover effects
+
         const interactiveElements = document.querySelectorAll("a, .project-card");
         interactiveElements.forEach((elem) => {
           elem.addEventListener("mouseenter", () => {
