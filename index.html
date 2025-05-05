@@ -119,13 +119,13 @@
       .projects-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; /* Changed to 3 columns */
-        gap: 25px; /* Slightly reduced gap for 3 columns */
+        gap: 25px; 
       }
 
-      /* Media queries for responsive design */
+      
       @media (max-width: 1024px) {
         .projects-grid {
-          grid-template-columns: 1fr 1fr; /* Switch to two columns on tablets */
+          grid-template-columns: 1fr 1fr; 
         }
       }
 
@@ -151,7 +151,7 @@
 
       .project-card img {
         width: 100%;
-        height: 180px; /* Slightly reduced height for 3 column layout */
+        height: 180px; 
         object-fit: cover;
       }
 
@@ -232,11 +232,22 @@
       <div class="project-content">
         <h3>A guilty plea was just the beginning...</h3>
         <p>Oregon native Arjorie Arberry-Baribeault always had a razor sharp eye for styling hair but when her daughter Zion was
-        diagnosed with cancer at thirteen years old, followed by her best friend’s son a few years later, Baribeault left the
+        diagnosed with cancer at thirteen years old, followed by her best friend's son a few years later, Baribeault left the
         beauty industry for good in 2020 to investigate why.</p>
         <a href="https://ananyabchetia.github.io/contaminated/" target="_blank">Read More</a>
       </div>
     </div>
+
+      <div class="project-card">
+        <img src="toilet.jpg" alt="contaminated">
+        <div class="project-content">
+          <h3>Flush out the truth: Will you roll with toilet paper or bidets?</h3>
+          <p>I look into why consumers prefer using toilet paper in the U.S despite vast research showing the health and enviroment benefits for using bidets.</p>
+          <a href="https://ananyabchetia.github.io/Toilet-paper-versus-bidets/" target="_blank">Read More</a>
+        </div>
+      </div>
+
+
 
     <!-- Section Header as Card (spans full width using grid-column) -->
     <div class="project-card" style="grid-column: span 3; background: none; box-shadow: none; text-align: left;">
