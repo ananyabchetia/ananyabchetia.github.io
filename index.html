@@ -28,22 +28,21 @@
       /* Hide default cursor */
     }
 
-
     .tech-labels {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 6px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .tech-label {
-      font-size: 12px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background-color: #e0e0e0;
-      color: #333;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+      color: #666;
       display: inline-block;
       white-space: nowrap;
     }
@@ -97,7 +96,6 @@
       background-color: #fffce5;
       color: #0f0909;
     }
-
 
     .custom-cursor {
       position: fixed;
@@ -184,95 +182,131 @@
       height: 35px;
     }
 
-    /* Projects Section */
+    .bio-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     .projects-container {
-      max-width: 1200px;
-      /* Increased width to accommodate 3 columns */
-      margin: 50px auto;
-      padding: 0 20px;
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 10px;
+    }
+
+    .projects-section-title {
       text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 40px;
+      letter-spacing: 0.5px;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      /* Changed to 3 columns */
-      gap: 25px;
+      gap: 40px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-
-    @media (max-width: 1024px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .story-container {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
     }
 
+    .storyboard {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 0;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .storyboard img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .storyboard:hover img {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.3s ease;
+      font-size: 12px;
+    }
+
+    .storyboard:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay p {
+      font-size: 14px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .project-description {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .projects-grid {
         grid-template-columns: 1fr;
-        /* Switch to one column on mobile */
+        gap: 20px;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .projects-container {
+        margin: 40px auto;
+        padding: 0 16px;
       }
     }
 
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .project-card:hover {
-      transform: scale(1.02);
-    }
-
-    .project-card img {
+    .storyboard-video {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
-    }
-
-    .project-content {
-      padding: 20px;
-    }
-
-    .project-content h3 {
-      color: brown;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .project-content p {
-      font-size: 14px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .project-content a {
-      color: brown;
-      font-size: 14px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project-content a:hover {
-      text-decoration: underline;
-    }
-
-    .bio-container {
-      display: flex;
-      flex-direction: column;
+      display: block;
     }
   </style>
 </head>
 
 <body>
-
-
   <div class="custom-cursor"></div>
-
 
   <div class="container">
     <h1 class="title">~ ananya chetia ~ আনন্যা <span class="blinking-cursor">|</span></h1>
@@ -304,191 +338,248 @@
   </div>
 
   <div class="projects-container">
-    <p class="bio" style="font-size: 20px; margin-bottom: 30px;">
-      find my data projects here:
-    </p>
+    <div class="projects-section-title">
+      DATA PROJECTS
+    </div>
 
     <div class="projects-grid">
-
-
-
-      <div class="project-card">
-        <img src="measurement.jpg" alt="pricetags">
-        <div class="project-content">
-          <h3>What's OFF about vanity sizing</h3>
-          <p>Exploring size variations among popular U.S brands.</p>
-          <a href="https://ananyabchetia.github.io/vanitysizing/" target="_blank">Read More</a>
-          <div class="tech-labels">
-            <span class="tech-label python">Python</span>
-            <span class="tech-label pandas">Pandas</span>
-            <span class="tech-label scrollytelling">Scrollytelling</span>
-            <span class="tech-label illustrator">Illustrator</span>
-            <span class="tech-label scraping">Multi page scraping</span>
-            <span class="tech-label R">R</span>
+      <div class="story-container">
+        <div class="storyboard" onclick="window.open('https://ananyabchetia.github.io/vanitysizing/', '_blank')">
+          <img src="measurement.jpg" alt="What's OFF about vanity sizing">
+          <div class="overlay">
+            <p>I scraped over a dozen shopping brand websites and built a first of a kind dataset showing
+              how size charts varies across fast fashion brands. </p>
           </div>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="header_photo.jpg" alt="contaminated">
-        <div class="project-content">
-          <h3>A guilty plea was just the beginning...</h3>
-          <p>FOIA requested data and over dozens of violations show how a wood treatment facility caused air pollution
-            and deteriorated the health of residents in a small town in Oregon.</p>
-          <a href="https://ananyabchetia.github.io/contaminated/" target="_blank">Read More</a>
-          <div class="tech-labels">
-            <span class="tech-label geopandas">GeoPandas</span>
-            <span class="tech-label illustrator">Illustrator</span>
-            <span class="tech-label scrollytelling">Scrollytelling</span>
-          </div>
-
-
-
+        <div class="project-title">What's OFF about vanity sizing</div>
+        <div class="project-description">
+          This story looks into how frustrated consumers feel when shopping because there is no universal size
+          guide.
+        </div>
+        <div class="tech-labels">
+          <span class="tech-label python">Python</span>
+          <span class="tech-label pandas">Pandas</span>
+          <span class="tech-label scrollytelling">Scrollytelling</span>
+          <span class="tech-label illustrator">Illustrator</span>
+          <span class="tech-label scraping">Multi page scraping</span>
+          <span class="tech-label R">R</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="scholarship.jpg" alt="pricetags">
-        <div class="project-content">
-          <h3>Financial Aid and Scholarship Tracker</h3>
-          <p>I scraped dozens of PDFs and multipage websites to find which U.S universities provide financial aid to
-            international students. I am also manually tracking scholarships under investigation.</p>
-          <a href="https://ananyabchetia.github.io/financialaid_and_scholarship_database/" target="_blank">Check it out
-            here.</a>
-          <div class="tech-labels">
-            <span class="tech-label scraping">PDF and Multi page scraping</span>
-            <span class="tech-label geopandas">GeoPandas</span>
-            <span class="tech-label wayback">Wayback Machine</span>
+      <div class="story-container">
+        <div class="storyboard" onclick="window.open('https://ananyabchetia.github.io/contaminated/','_blank')">
+          <img src="header_photo.jpg" alt="A guilty plea was just the beginning">
+          <div class="overlay">
+            <p>Merged Census and EPA's Superfund sites dataset to investigate which communities were
+              most vulnerable to hazardous sites.</p>
           </div>
         </div>
+        <div class="project-title">A guilty plea was just the beginning</div>
+        <div class="project-description">
+          FOIA requested data and over dozens of violations show how a wood treatment facility caused air
+          pollution
+          and deteriorated the health of residents in a small town in Oregon.
+        </div>
+        <div class="tech-labels">
+          <span class="tech-label python">Python</span>
+          <span class="tech-label pandas">Pandas</span>
+          <span class="tech-label scrollytelling">Scrollytelling</span>
+          <span class="tech-label illustrator">Illustrator</span>
+          <span class="tech-label scraping">FOIA</span>
+          <span class="tech-label R">R</span>
+        </div>
       </div>
 
-      <div class="project-card">
-        <img src="toilet.jpg" alt="contaminated">
-        <div class="project-content">
-          <h3>Flush out the truth: Will you roll with toilet paper or bidets?</h3>
-          <p>I look into why consumers prefer using toilet paper in the U.S despite vast research showing the health and
-            enviroment benefits for using bidets.</p>
-          <a href="https://ananyabchetia.github.io/Toilet-paper-versus-bidets/" target="_blank">Read More</a>
-          <div class="tech-labels">
-            <span class="tech-label scraping">PDF and web scraping</span>
-            <span class="tech-label illustrator">Illustrator</span>
-            <span class="tech-label procreate">Procreate</span>
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://ananyabchetia.github.io/financialaid_and_scholarship_database/', '_blank')">
+          <img src="scholarship.jpg" alt="Financial Aid and Scholarship Tracker">
+          <div class="overlay">
+            <p>I scraped dozens of PDFs and multipage websites to find which U.S universities
+              provide
+              financial aid to international students. I am also manually tracking scholarships
+              under investigation.</p>
           </div>
         </div>
+        <div class="project-title">Financial Aid and Scholarship Tracker</div>
+        <div class="project-description">
+          I've developed a scholarship database that tracks college scholarships that have quietly
+          disappeared following
+          investigations by the current administration and legal challenges from conservative
+          nonprofits. I also have a database of how much financial aid U.S universities give
+          international students.
+        </div>
+        <div class="tech-labels">
+          <span class="tech-label scraping">PDF and Multi page scraping</span>
+          <span class="tech-label geopandas">GeoPandas</span>
+          <span class="tech-label wayback">Wayback Machine</span>
+        </div>
       </div>
 
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://ananyabchetia.github.io/Toilet-paper-versus-bidets/', '_blank')">
+          <img src="toilet.jpg" alt="Flush out the truth">
+          <div class="overlay">
+            <p>I scraped PDFs and collected data from Google Analytics to investigate why toilet
+              paper is more popular in the U.S than bidets, despite the financial and
+              enviromental cost.</p>
+          </div>
+        </div>
+        <div class="project-title">Flush out the truth: Will you roll with toilet paper or bidets?
+        </div>
+        <div class="project-description">
+          I look into why consumers prefer using toilet paper in the U.S despite vast research
+          showing the health and
+          enviroment benefits for using bidets.
+        </div>
+        <div class="tech-labels">
+          <span class="tech-label python">Python</span>
+          <span class="tech-label pandas">Pandas</span>
+          <span class="tech-label scrollytelling">Scrollytelling</span>
+          <span class="tech-label illustrator">Illustrator</span>
+          <span class="tech-label scraping">FOIA</span>
+          <span class="tech-label R">R</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="projects-container">
+    <div class="projects-section-title">
+      FIND MY STORIES ON EDUCATION, CLIMATE POLICIES AND BUSINESS HERE:
+    </div>
 
-
-      <div class="project-card" style="grid-column: span 3; background: none; box-shadow: none; text-align: left;">
-        <p class="bio" style="font-size: 20px; margin-top: 30px; margin-bottom: 10px;">
-          find my stories on education, climate change and business here:
-        </p>
+    <div class="projects-grid">
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php', '_blank')">
+          <img src="courier-newsroom.jpg" alt="Courier Newsroom">
+        </div>
+        <div class="project-title">Courier Newsroom Spent Big on a Meta Ad Blitz in October
+        </div>
+        <div class="project-description">
+          The $6 million-plus the progressive 'newsroom' spent on Meta lagged only the official Trump and
+          Harris
+          campaigns.
+        </div>
+        <div class="tech-labels">
+        </div>
       </div>
 
-      <!-- Remaining project cards -->
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/', '_blank')">
+          <img src="flood.jpeg" alt="flood">
+        </div>
+        <div class="project-title">When books sink underwater in Assam
+        </div>
+        <div class="project-description">
+          This story looks into how annual floods in Assam, India disrupts low-income students from accessing
+          their education.
+        </div>
+        <div class="tech-labels">
+        </div>
+      </div>
 
-      <div class="project-card">
-        <img src="courier-newsroom.jpg" alt="newsroom">
-        <div class="project-content">
-          <h3>Courier Newsroom Spent Big on a Meta Ad Blitz in October</h3>
-          <p>The $6 million-plus the progressive 'newsroom' spent on Meta lagged only the official Trump and Harris
-            campaigns.</p>
-          <a href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php"
-            target="_blank">Read More</a>
+      <div class="story-container">
+        <div class="storyboard" onclick="window.open('#', '_blank')">
+          <img src="dominion.jpeg" alt="peaker plant">
+        </div>
+        <div class="project-title">Dominion Energy's Peaker Plant Sparks Concern
+        </div>
+        <div class="project-description">
+          Climate activists protest a proposed peaker plant in Richmond, VA.
+        </div>
+        <div class="tech-labels">
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/', '_blank')">
+          <img src="methane.jpeg" alt="Methane Leaks">
+        </div>
+        <div class="project-title">Methane Activists in Richmond Detect Dangerous Leaks
+        </div>
+        <div class="project-description">
+          Beyond Methane RVA obtained documents revealing hundreds of leaks.
+        </div>
+        <div class="tech-labels">
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/', '_blank')">
+          <img src="afterschool.jpeg" alt="Harlem Afterschool">
+        </div>
+        <div class="project-title">Nonprofit Loses Funds for Harlem After-School Programs
+        </div>
+        <div class="project-description">
+          Parents fear they'll have to work fewer hours.
+        </div>
+        <div class="tech-labels">
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://www.thecollegianur.com/article/2023/12/the-business-of-college-sports-and-gender-based-wage-gaps-for-head-coaches', '_blank')">
+          <img src="sports.jpeg" alt="College Sports Pay Gap">
+        </div>
+        <div class="project-title">College Sports and Gender-Based Wage Gaps
+        </div>
+        <div class="project-description">
+          Using federal data I investigated why coaches for men's teams earn significantly more than coaches
+          of women's sports.
+        </div>
+        <div class="tech-labels">
         </div>
       </div>
 
 
-      <div class="project-card">
-        <img src="flood.jpeg" alt="floods">
-        <div class="project-content">
-          <h3>When Books Sink Underwater in Assam</h3>
-          <p>Flooding's impact on school children in India's northeast.</p>
-          <a href="https://india.mongabay.com/2024/10/when-books-sink-underwater-assam/" target="_blank">Read More</a>
+      <div class="story-container">
+        <div class="storyboard" onclick="window.open('#', '_blank')">
+          <img src="rggi.jpeg" alt="RGGI Repeal">
+        </div>
+        <div class="project-title">Richmond citizens confront Youngkin's RGGI repeal
+        </div>
+        <div class="project-description">
+          Governor Youngkin's decision to withdraw from the Regional Greenhouse Gas Initiative.
+        </div>
+        <div class="tech-labels">
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="dominion.jpeg" alt="peaker plant">
-        <div class="project-content">
-          <h3>Dominion Energy's Peaker Plant Sparks Concern</h3>
-          <p>Climate activists protest new facility in Richmond, VA.</p>
-          <a href="https://www.thecollegianur.com/article/2023/12/dominion-energys-peaker-plant-sparks-concern-with-climate-activists-in-richmond"
-            target="_blank">Read More</a>
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors', '_blank')">
+          <img src="junior.jpeg" alt="Turkish Junior Earthquake">
+        </div>
+        <div class="project-title">'Those are my people' — Junior flies home to help
+        </div>
+        <div class="project-description">
+          A Turkish student helps survivors after a devastating earthquake.
+        </div>
+        <div class="tech-labels">
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="methane.jpeg" alt="Methane Leaks">
-        <div class="project-content">
-          <h3>Methane Activists in Richmond Detect Dangerous Leaks</h3>
-          <p>Beyond Methane RVA obtained documents revealing hundreds of leaks.</p>
-          <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/"
-            target="_blank">Read
-            More</a>
+      <div class="story-container">
+        <div class="storyboard"
+          onclick="window.open('https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas?ct=content_open&cv=cbox_latest', '_blank')">
+          <img src="vandalism.jpg" alt="Fire Training Facility">
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="afterschool.jpeg" alt="Harlem Afterschool">
-        <div class="project-content">
-          <h3>Nonprofit Loses Funds for Harlem After-School Programs</h3>
-          <p>Parents fear they'll have to work fewer hours.</p>
-          <a href="https://theuptowner.org/nonprofit-loses-funds-for-after-school-programs-at-harlem-schools/"
-            target="_blank">Read More</a>
+        <div class="project-title">'Muslim students grapple with vandalism on Richmond mosque
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="sports.jpeg" alt="College Sports Pay Gap">
-        <div class="project-content">
-          <h3>College Sports and Gender-Based Wage Gaps</h3>
-          <p>Coaches for men's teams earn significantly more.</p>
-          <a href="https://www.thecollegianur.com/article/2023/12/the-business-of-college-sports-and-gender-based-wage-gaps-for-head-coaches"
-            target="_blank">Read More</a>
+        <div class="project-description">
+          “I haven't told my parents about what happened,” Ifti Alam said. “I don't think I will just because
+          it's a
+          matter of
+          safety, and they don't want to hear that a mosque their son goes to got vandalized."
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="rggi.jpeg" alt="RGGI Repeal">
-        <div class="project-content">
-          <h3>Richmond citizens confront Youngkin's RGGI repeal</h3>
-          <a href="https://www.thecollegianur.com/article/2023/09/richmond-citizens-confront-youngkins-order-to-repeal-rggi"
-            target="_blank">Read More</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="richmond.jpeg" alt="Fire Training Facility">
-        <div class="project-content">
-          <h3>South Richmond Opposes Fire Training Facility</h3>
-          <p>A wildlife sanctuary is just 100 meters away from the proposed site.</p>
-          <a href="https://insideclimatenews.org/news/13072023/richmond-fire-training-facility-sanctuary/"
-            target="_blank">Read More</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="junior.jpeg" alt="Turkish Junior Earthquake">
-        <div class="project-content">
-          <h3>'Those are my people' — Junior flies home to help</h3>
-          <p>A Turkish student helps survivors after a devastating earthquake.</p>
-          <a href="https://www.thecollegianur.com/article/2023/03/those-are-my-people-turkish-junior-flies-home-to-help-earthquake-survivors"
-            target="_blank">Read More</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="vandalism.jpg" alt="Fire Training Facility">
-        <div class="project-content">
-          <h3>Muslim students grapple with vandalism on Richmond mosque</h3>
-          <p>“I haven't told my parents about what happened,” Ifti Alam said. “I don't think I will just because it's a
-            matter of
-            safety, and they don't want to hear that a mosque their son goes to got vandalized.”</p>
-          <a href="https://www.thecollegianur.com/article/2022/04/ci9ttfxsry4bhas?ct=content_open&cv=cbox_latest"
-            target="_blank">Read More</a>
+        <div class="tech-labels">
         </div>
       </div>
 
@@ -496,56 +587,37 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const cursor = document.querySelector(".custom-cursor");
+    // Custom cursor functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const cursor = document.querySelector('.custom-cursor');
 
-
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+      document.addEventListener('mousemove', function (e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
       });
 
+      // Add grow effect on hover
+      document.addEventListener('mouseenter', function (e) {
+        if (e.target.tagName === 'A' || e.target.classList.contains('storyboard') || e.target.closest('.storyboard')) {
+          cursor.classList.add('grow');
+        }
+      }, true);
 
-      const interactiveElements = document.querySelectorAll("a, .project-card");
-      interactiveElements.forEach((elem) => {
-        elem.addEventListener("mouseenter", () => {
-          cursor.classList.add("grow");
-        });
-        elem.addEventListener("mouseleave", () => {
-          cursor.classList.remove("grow");
-        });
+      document.addEventListener('mouseleave', function (e) {
+        if (e.target.tagName === 'A' || e.target.classList.contains('storyboard') || e.target.closest('.storyboard')) {
+          cursor.classList.remove('grow');
+        }
+      }, true);
+
+      // Add click effect
+      document.addEventListener('mousedown', function () {
+        cursor.classList.add('click');
       });
 
-      // Handle click effects
-      document.addEventListener("mousedown", () => {
-        cursor.classList.add("click");
-      });
-
-      document.addEventListener("mouseup", () => {
-        cursor.classList.remove("click");
-      });
-
-      // Make cursor work when clicking on project cards
-      document.querySelectorAll(".project-card").forEach(card => {
-        // Skip hidden placeholder cards
-        if (card.style.visibility === "hidden") return;
-
-        card.addEventListener("click", (e) => {
-          // Find the link within the card
-          const link = card.querySelector("a");
-          if (link) {
-            // If user clicked directly on the link, let the default behavior handle it
-            if (e.target === link || link.contains(e.target)) {
-              return;
-            }
-            // Otherwise open the link
-            window.open(link.href, "_blank");
-          }
-        });
+      document.addEventListener('mouseup', function () {
+        cursor.classList.remove('click');
       });
     });
-
-
   </script>
 </body>
 
