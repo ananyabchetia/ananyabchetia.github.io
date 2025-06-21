@@ -23,8 +23,7 @@
       font-family: "Space Grotesk", sans-serif;
       margin: 0;
       padding: 0;
-      cursor: none;
-      /* Hide default cursor */
+
     }
 
     .tech-labels {
@@ -96,31 +95,6 @@
       color: #0f0909;
     }
 
-    .custom-cursor {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: rgba(0, 191, 255, 0.8);
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 1), 0 0 30px rgba(0, 191, 255, 0.8);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.05s ease-out, width 0.2s, height 0.2s, box-shadow 0.2s;
-      z-index: 9999;
-    }
-
-    .custom-cursor.grow {
-      width: 35px;
-      height: 35px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 1), 0 0 40px rgba(0, 191, 255, 0.8);
-    }
-
-    .custom-cursor.click {
-      width: 15px;
-      height: 15px;
-      box-shadow: 0 0 25px rgba(0, 191, 255, 1), 0 0 50px rgba(0, 191, 255, 0.8);
-      opacity: 0.8;
-    }
 
     .container {
       text-align: center;
@@ -585,39 +559,7 @@
     </div>
   </div>
 
-  <script>
-    // Custom cursor functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const cursor = document.querySelector('.custom-cursor');
 
-      document.addEventListener('mousemove', function (e) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-      });
-
-      // Add grow effect on hover
-      document.addEventListener('mouseenter', function (e) {
-        if (e.target.tagName === 'A' || e.target.classList.contains('storyboard') || e.target.closest('.storyboard')) {
-          cursor.classList.add('grow');
-        }
-      }, true);
-
-      document.addEventListener('mouseleave', function (e) {
-        if (e.target.tagName === 'A' || e.target.classList.contains('storyboard') || e.target.closest('.storyboard')) {
-          cursor.classList.remove('grow');
-        }
-      }, true);
-
-      // Add click effect
-      document.addEventListener('mousedown', function () {
-        cursor.classList.add('click');
-      });
-
-      document.addEventListener('mouseup', function () {
-        cursor.classList.remove('click');
-      });
-    });
-  </script>
 </body>
 
 </html>
