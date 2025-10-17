@@ -6,24 +6,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ananya Chetia's Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
   <link rel="icon" type="image/png" href="monitor.png">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <style>
     body {
       background-color: #fffcf5;
-      font-family: "Space Grotesk", sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
 
+
+    .page {
+      max-width: 780px;
+      margin: 16vh auto 8rem;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+
+    .title {
+      color: rgb(66, 55, 167);
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+    }
+
+    .blinking-cursor {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(66, 55, 167);
+      animation: blink 0.6s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .bio {
+      color: black;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0 0 8px 0;
+    }
+
+    .bio a {
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+
+    .intro-box {
+      margin-top: 60px;
+    }
+
+    .section-title {
+      color: rgb(66, 55, 167);
+      font-size: 21px;
+      font-weight: 700;
+      margin: 28px 0 10px 0;
+      letter-spacing: 0.2px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    .social-icons img {
+      width: 35px;
+      height: 35px;
     }
 
     .tech-labels {
@@ -99,70 +169,6 @@
       color: #0f0909;
     }
 
-
-    .container {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      /* Centers title & icons */
-    }
-
-    .title {
-      color: rgb(66, 55, 167);
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .blinking-cursor {
-      font-size: 30px;
-      font-weight: bold;
-      color: rgb(66, 55, 167);
-      animation: blink 0.6s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .bio {
-      color: black;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 25px;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.1);
-    }
-
-    .social-icons img {
-      width: 35px;
-      height: 35px;
-    }
-
-    .bio-container {
-      display: flex;
-      flex-direction: column;
-    }
-
     .projects-container {
       max-width: 1300px;
       margin: 60px auto;
@@ -177,7 +183,6 @@
       margin-bottom: 40px;
       letter-spacing: 0.5px;
     }
-
 
     .projects-grid {
       display: grid;
@@ -215,12 +220,9 @@
 
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0, 0, 0, 0.7);
-      color: white;
+      color: #fff;
       opacity: 0;
       display: flex;
       justify-content: center;
@@ -256,15 +258,14 @@
       margin-bottom: 12px;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
+      .page {
+        margin: 8vh auto 5rem;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-      }
-
-      .project-card {
-        padding: 20px;
       }
 
       .projects-container {
@@ -279,38 +280,89 @@
       object-fit: cover;
       display: block;
     }
+
+    html,
+    body {
+      height: 100%;
+      background-color: #fffcf5;
+      /* same yellow as before */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .under {
+      color: black;
+      font-size: 19px;
+      font-weight: 400;
+      margin: 0 0 8px 0;
+    }
+
+    .highlight {
+      background-color: rgb(244, 242, 255);
+    }
   </style>
 </head>
 
 <body>
-  <div class="custom-cursor"></div>
-
-  <div class="container">
-    <h1 class="title">~ ananya chetia ~ আনন্যা <span class="blinking-cursor">|</span></h1>
-    <div class="bio-container">
+  <div class="page">
+    <div class="intro-box">
+      <h1 class="title">Ananya Chetia ~ আনন্যা <span class="blinking-cursor">|</span></h1>
       <p class="bio">Data journalist reporting on education, business and climate policies</p>
-      <p class="bio">for <a
-          href='https://www.aljazeera.com/features/2025/7/29/on-huge-river-island-in-indias-assam-annual-floods-threaten-tribal-arts'
-          target="_blank">Al Jazeera </a>,
-        <a href='https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php'
-          target="_blank">Columbia
-          Journalism Review</a>, <a
-          href='https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/' target="_blank">Inside
-          Climate News</a> and more.
+      <p class="bio">
+        for
+        <a href="https://www.aljazeera.com/features/2025/7/29/on-huge-river-island-in-indias-assam-annual-floods-threaten-tribal-arts"
+          target="_blank">Al&nbsp;Jazeera</a>,
+        <a href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php"
+          target="_blank">Columbia Journalism Review</a>,
+        <a href="https://insideclimatenews.org/news/22062023/methane-gas-leaks-richmond-virginia/"
+          target="_blank">Inside Climate News</a> and more.
       </p>
     </div>
-    <p></p>
+    <h2 class="section-title">Skills</h2>
+    <p class="under">
+      I source, clean and analyze data in
+      <span class="highlight">Python</span>,
+      <span class="highlight">R</span> and
+      <span class="highlight">SQL</span>,
+      develop <span class="highlight">API</span>-powered tools, scrape with
+      <span class="highlight">BeautifulSoup</span>,
+      <span class="highlight">Playwright</span> and
+      <span class="highlight">PDFPlumber</span> and conduct
+      <span class="highlight">geospatial analysis</span>.
+    </p>
+
+    <p class="under">
+      On the storytelling side, I design and code interactive data visualizations with
+      <span class="highlight">D3.js</span>,
+      <span class="highlight">Leaflet.js</span> and
+      <span class="highlight">HTML/CSS/JavaScript</span> and use
+      <span class="highlight">scrollytelling</span> techniques to create engaging narratives. I'm also fluent in
+      <span class="highlight">Adobe Suite</span> (Illustrator, Photoshop, InDesign, Premiere Pro).
+    </p>
+
+    <p class="under">
+      I interview my sources in
+      <span class="highlight">Assamese</span>,
+      <span class="highlight">Hindi</span> and
+      <span class="highlight">English</span>.
+    </p>
+
+
+    <h2 class="section-title">Contact me</h2>
     <div class="social-icons">
-      <a href="mailto:ananyabchetia@gmail.com" target="_blank">
+      <a href="mailto:ananyabchetia@gmail.com" target="_blank" aria-label="Email">
         <img src="images/social_media_icons/email.png" alt="Email">
       </a>
-      <a href="https://x.com/AnanyaBChetia" target="_blank">
+      <a href="https://x.com/AnanyaBChetia" target="_blank" aria-label="Twitter">
         <img src="images/social_media_icons/twitter.png" alt="Twitter">
       </a>
-      <a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank">
+      <a href="https://www.linkedin.com/in/ananya-chetia-a94121183/" target="_blank" aria-label="LinkedIn">
         <img src="images/social_media_icons/linkedin.png" alt="LinkedIn">
       </a>
-      <a href="https://github.com/ananyabchetia" target="_blank">
+      <a href="https://github.com/ananyabchetia" target="_blank" aria-label="GitHub">
         <img src="images/social_media_icons/github.png" alt="GitHub">
       </a>
     </div>
@@ -429,7 +481,6 @@
           <span class="tech-label python">Chalkbeat</span>
         </div>
       </div>
-
 
       <div class="story-container">
         <div class="storyboard"
