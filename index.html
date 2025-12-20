@@ -50,6 +50,52 @@
   <meta name="google-site-verification" content="D-fmDOLaESN3IYar2JQfaMmm7yTEqw-xptQYe-XmNjk" />
 </head>
 <style>
+  .about-section {
+    background: #ffffff;
+    padding: 60px 20px;
+    margin-top: 80px;
+  }
+
+  .about-container {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .about-title {
+    color: rgb(66, 55, 167);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+
+
+  .about-text {
+    font-size: 18px;
+    line-height: 1.65;
+    color: #333;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-photo {
+      margin: 0 auto 20px auto;
+    }
+  }
+
   body {
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
@@ -363,9 +409,38 @@
       text-decoration: underline;
     }
   }
+
+  .top-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .top-nav a {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(66, 55, 167);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.2s ease;
+    font-size: 20
+  }
+
+  .top-nav a:hover {
+    background-color: #f2f0ff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 </style>
 
 <body>
+  <nav class="top-nav">
+    <a href="#about">About</a>
+  </nav>
   <div class="page">
     <div class="intro-box">
       <h1 class="title">Ananya Chetia ~ আনন্যা <span class="blinking-cursor">|</span></h1>
@@ -631,7 +706,7 @@
 
   <div class="projects-container">
     <div class="projects-section-title">
-      my reporting
+      Additional stories
     </div>
 
     <div class="projects-grid">
@@ -775,6 +850,28 @@
         </div>
       </div>
 
+    </div>
+  </div>
+  <div class="about-section" id="about">
+    <div class="about-container">
+      <h2 class="about-title">About Me</h2>
+
+      <div class="about-content">
+        <img src="me.png" alt="Ananya Chetia portrait" class="about-photo">
+
+        <p class="about-text">
+          I'm a data journalist from Assam, India who was raised in Saudi Arabia.
+          I cover education policies, climate change and information warfare with a data driven lens. That includes
+          scraping ugly PDFs and messy websites, creating interactive charts and maps on QGIS and successfully filing
+          FOIA requests.
+          My stories have been recognized by the Society of Professional Journalists' Mark of Excellence Awards and
+          Virginia's press conferences for Best In-Depth News Story. I also won my university's Global Engagement Award
+          and the Student Journalist of the Year award for my
+          role as executive editor of the student paper, The Collegian.
+          Outside of reporting, I'm curled up with a juicy novel, drawing on my ipad (like the sketch to the left!) or
+          curating the perfect spotify playlist.
+        </p>
+      </div>
     </div>
   </div>
 </body>
