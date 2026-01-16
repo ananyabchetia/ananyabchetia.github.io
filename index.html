@@ -50,6 +50,60 @@
   <meta name="google-site-verification" content="D-fmDOLaESN3IYar2JQfaMmm7yTEqw-xptQYe-XmNjk" />
 </head>
 <style>
+  @media (max-width: 768px) {
+    .page {
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-nav {
+      position: static;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .top-nav a {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 26px;
+    }
+
+    .bio {
+      font-size: 17px;
+    }
+
+    .under {
+      font-size: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .storyboard {
+      height: 220px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .social-icons {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
   .about-section {
     background: #ffffff;
     padding: 60px 20px;
@@ -563,6 +617,26 @@
 
       <div class="story-container">
         <div class="storyboard"
+          onclick="window.open('https://www.chalkbeat.org/newyork/2025/12/03/breaking-down-who-doe-employees-donated-to-in-mayoral-races/', '_blank')">
+          <img src="images/front_page_story_images/zohran_mamdani.jpg" alt="Zohran Mamdani">
+        </div>
+        <div class="title-labels">
+          <span class="pub-title">Chalkbeat</span>
+        </div>
+        <div class="project-title">Zohran Mamdani's thin education agenda didn't stop a surge of donations from NYC DOE
+          employees
+
+        </div>
+        <div class="project-description">
+          Zohran Mamdani got the highest number of individual campaign donations from DOE employees this year despite
+          his
+          thin
+          education agenda.
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="storyboard"
           onclick="window.open('https://ananyabchetia.github.io/financialaid_and_scholarship_database/', '_blank')">
           <video src="images/front_page_videos/financial.mp4" class="storyboard-video" autoplay loop muted
             playsinline></video>
@@ -589,6 +663,24 @@
       </div>
 
       <div class="story-container">
+        <div class="storyboard" onclick="window.open('https://ananyabchetia.github.io/EPP_trackers/', '_blank')">
+          <img src="images/front_page_story_images/epp_tracker.jpg" alt="EPP">
+          <div class="overlay">
+            <p>My website updates every two weeks and shows which universities has EPP filed a complaint against.</p>
+          </div>
+        </div>
+        <div class="project-title">Live university complaint tracker
+        </div>
+        <div class="project-description">
+          In my upcoming story for Chalkbeat New York, my analysis shows that after the EPP files complaints against
+          race-based or
+          minority scholarships for students of color, universities quietly remove these scholarships or alter the
+          language of it
+          so that it no longer exclusively supports a marginalized community.
+        </div>
+      </div>
+
+      <div class="story-container">
         <div class="storyboard"
           onclick="window.open('https://ananyabchetia.github.io/interactive_size_finder/', '_blank')">
           <video src="images/front_page_videos/interactive_shops.mp4" class="storyboard-video" autoplay loop muted
@@ -606,44 +698,6 @@
         </div>
         <div class="tech-labels">
           <span class="tech-label scraping">Javascript</span>
-        </div>
-      </div>
-
-      <div class="story-container">
-        <div class="storyboard"
-          onclick="window.open('https://www.chalkbeat.org/newyork/2025/12/03/breaking-down-who-doe-employees-donated-to-in-mayoral-races/', '_blank')">
-          <img src="images/front_page_story_images/zohran_mamdani.jpg" alt="Zohran Mamdani">
-        </div>
-        <div class="title-labels">
-          <span class="pub-title">Chalkbeat</span>
-        </div>
-        <div class="project-title">Zohran Mamdani's thin education agenda didn't stop a surge of donations from NYC DOE
-          employees
-
-        </div>
-        <div class="project-description">
-          Zohran Mamdani got the highest number of individual campaign donations from DOE employees this year despite
-          his
-          thin
-          education agenda.
-        </div>
-      </div>
-
-      <div class="story-container">
-        <div class="storyboard" onclick="window.open('https://ananyabchetia.github.io/EPP_trackers/', '_blank')">
-          <img src="images/front_page_story_images/epp_tracker.jpg" alt="EPP">
-          <div class="overlay">
-            <p>My website updates every two weeks and shows which universities has EPP filed a complaint against.</p>
-          </div>
-        </div>
-        <div class="project-title">Live university complaint tracker
-        </div>
-        <div class="project-description">
-          In my upcoming story for Chalkbeat New York, my analysis shows that after the EPP files complaints against
-          race-based or
-          minority scholarships for students of color, universities quietly remove these scholarships or alter the
-          language of it
-          so that it no longer exclusively supports a marginalized community.
         </div>
       </div>
 
