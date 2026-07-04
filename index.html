@@ -492,6 +492,52 @@
   #about {
     scroll-margin-top: 100px;
   }
+
+  /* Mapping / Graphic Gallery (inline) */
+  .mg-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #666;
+    max-width: 700px;
+    margin: -20px auto 30px auto;
+  }
+
+  .mg-gallery {
+    column-count: 3;
+    column-gap: 16px;
+  }
+
+  .mg-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .mg-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  .mg-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    .mg-gallery {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mg-gallery {
+      column-count: 1;
+    }
+  }
 </style>
 
 <body>
@@ -972,6 +1018,30 @@
 
     </div>
   </div>
+  <div class="projects-container" id="mapping-gallery">
+    <div class="projects-section-title">Graphic Gallery</div>
+    <p class="mg-intro">Visualizing data with QGIS, Illustrator, ggplot and Datawrapper.</p>
+    <div class="mg-gallery">
+      <div class="mg-item"><img src="mapping_gallery/images/columbia.jpeg" alt="Columbia University"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/graph-new-may.jpeg" alt="student-newspaper"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/rikers.png" alt="rikers"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/waffle.jpg" alt="waffle"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/prediction-markets.png" alt="prediction-markets"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/bubble-chart.jpg" alt="bubble"></div>
+     <div class="mg-item"><img src="mapping_gallery/images/volume-distribution.jpeg" alt="volume"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/circular.png" alt="circular"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/area_chart.png" alt="area"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/beeswarm.jpg" alt="beeswarm"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/usa.png" alt="usa-map"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/disability.png" alt="disability"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/ukraine.png" alt="ukraine"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/trees.png" alt="trees"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/nyt_poll.jpg" alt="nytpoll"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/passport.jpg" alt="passport"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/poll.jpg" alt="Polling"></div>
+      <div class="mg-item"><img src="mapping_gallery/images/young_voters.jpg" alt="voting"></div>
+    </div>
+  </div>
   <div class="about-section" id="about">
     <div class="about-container">
       <h2 class="about-title">About Me</h2>
@@ -980,13 +1050,11 @@
         <img src="me.png" alt="Ananya Chetia portrait" class="about-photo">
 
         <p class="about-text">
-          I cover education policies, climate change and information warfare with a data driven lens. That includes
-          scraping ugly PDFs and messy websites, creating interactive charts and maps on QGIS and successfully filing
+          I am an award-winning data journalist covering prediction markets at CNBC. 
+          I enjoy scraping ugly PDFs and messy websites, creating interactive charts and filing successful
           FOIA requests.
           My stories have been recognized by the Society of Professional Journalists' Mark of Excellence Awards and
-          Virginia's press conferences for Best In-Depth News Story. I also won my university's Global Engagement Award
-          and the Student Journalist of the Year award for my
-          role as executive editor of the student paper, The Collegian.
+          has been cited in multiple academic papers. 
           Outside of reporting, I'm curled up with a juicy novel, drawing on my ipad (like the potrait here) or
           curating the perfect spotify playlist.
         </p>
